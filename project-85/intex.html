@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>project- 85 by Online Tutorial </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <section>
+            <div class="bg"></div>
+
+            <header>
+                <a href="#" class="logo">Fruits</a>
+                <ul class="navigation">
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">What's new</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </header>
+
+            <div class="content">
+                <div class="textBox">
+                    <h2>Eat Fresh <br> Everyday</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur corporis quos magnam aliquid maiores, odio quis illo inventore voluptates id, architecto similique mollitia ipsum atque?</p>
+                    <a href="#">Learn More</a>
+                </div>
+
+                <div class="imgBox">
+                    <img src="apple.png" class="fruits">
+                </div>
+            </div>
+
+            <ul class="thumb">
+                <li data-text="Apple" class="active"><img src="apple.png" alt="" onclick="imgSlider('apple.png');changeColor('#fc4a55')"></li>
+                <li data-text="Mango"><img src="mango.png" alt="" onclick="imgSlider('mango.png');changeColor('#ffcc02')"></li>
+                <li data-text="Watermelon"><img src="watermelon.png" alt="" onclick="imgSlider('watermelon.png');changeColor('#92ba3c')"></li>
+                <li data-text="Dragon Fruits"><img src="dragonFruits.png" alt="" onclick="imgSlider('dragonFruits.png');changeColor('#fb6cb2')"></li>
+                <li data-text="Pineapple"><img src="pineApple.png" alt="" onclick="imgSlider('pineApple.png');changeColor('#ffb42b')"></li>
+
+            </ul>
+
+            <ul class="sci">
+                <li><a href="#"><img src="facebook (8).png" alt=""></a></li>
+                <li><a href="#"><img src="twitter (8).png" alt=""></a></li>
+                <li><a href="#"><img src="instagram (8).png" alt=""></a></li>
+
+
+            </ul>
+        </section>
+    
+        <script>
+
+            function imgSlider(anything){
+                document.querySelector('.fruits').src = anything;
+            }
+
+            function changeColor(color){
+                const bg = document.querySelector('.bg');
+                bg.style.background = color;
+            }
+
+            let el = document.querySelectorAll('.thumb li');
+            for(let i = 0; i< el.length; i++){
+                el[i].onclick = function(){
+                    var c = 0;
+                    while(c < el.length){
+                        el[c++].className = 'check';
+                    }
+                    el[i].className = 'check active';
+                }
+            }
+        </script>
+    </body>
+</html>
